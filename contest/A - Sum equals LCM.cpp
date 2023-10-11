@@ -19,26 +19,31 @@ typedef unsigned long long int llu;
 int main()
 {
     faster;
-    int n;
-    cin >> n;
-    vector<int> odd, even;
-    for (int i = 0; i < n; i++)
+    int t;
+    cin >> t;
+    while (t--)
     {
-        int a;
-        cin >> a;
-        if (a & 1)
-            odd.push_back(a);
+        int n;
+        cin >> n;
+        vector<int> v;
+        ll sum = 0;
+        if (n < 10)
+            n = n;
         else
-            even.push_back(a);
+            n /= 2;
+        for (int i = 1; i <= n; i++)
+        {
+            sum += i;
+            // v.pb(i);
+            if (sum == n)
+                break;
+            else
+                continue;
+        }
+        if (sum == n)
+            cout << "Yes" << endl;
+        else
+            cout << "No" << endl;
     }
-    // cout << odd.size() << endl;
-    sort(odd.rbegin(), odd.rend());
-    sort(even.rbegin(), even.rend());
-    int mx = -1;
-    if (even.size() >= 2)
-        mx = max(mx, even[0] + even[1]);
-    if (odd.size() >= 2)
-        mx = max(mx, odd[0] + odd[1]);
-    cout << mx << endl;
     return 0;
 }
