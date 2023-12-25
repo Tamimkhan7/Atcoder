@@ -18,4 +18,5 @@ int main()
         cout << "YES" << endl;
     else
         cout << "NO" << endl;
+    
 }
