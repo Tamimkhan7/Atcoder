@@ -17,10 +17,22 @@ int32_t main()
     int ans = 0;
     for (int i = 0; i < n; i++)
     {
-        if ((s[i] == 'G' and s[i + 1] == 'C') || (s[i] == 'C' and s[i + 1] == 'G'))
-            ans++;
-        else if ((s[i] == 'A' and s[i + 1] == 'T') || (s[i] == 'T' and s[i + 1] == 'A'))
-            ans++;
+        int s1 = 0, s2 = 0;
+        for (int j = i; j < n; j++)
+        {
+            if (s[j] == 'A')
+                s1++;
+            else if (s[j] == 'T')
+                s1--;
+            else if (s[j] == 'C')
+                s2++;
+            else
+                s2--;
+            if (s1 == 0 and s2 == 0)
+            {
+                ans++;
+            }
+        }
     }
-    cout << ans+1 << '\n';
+    cout << ans << '\n';
 }
