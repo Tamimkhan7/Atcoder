@@ -17,25 +17,24 @@ int32_t main()
     for (int i = 0; i < n; i++)
         cin >> a[i];
     int cnt = 0;
-    for (int mask = 0; mask < (1 << n); mask++)
+    for (int i = 0; i < n; i++)
     {
-        vector<int> v;
-        for (int i = 0; i < n; i++)
+        for (int j = i + 1; j < n; j++)
         {
-            if ((mask >> i) & 1)
+            if (a[i] == a[j])
             {
-                v.push_back(a[i]);
-                if (v.size() > 4)
-                    break;
-            }
-        }
-        // cout << '\n';
-        if (v.size() == 3)
-        {
-            int x = a[1] - v[0];
-            int y = a[2] - a[1];
-            if (x == y)
                 cnt++;
+                continue;
+            }
+            else
+            {
+
+                for (int k = j + 1; k < n; k++)
+                {
+                    if (2 * a[j] == a[i] + a[k])
+                        cnt++;
+                }
+            }
         }
     }
     cout << cnt << '\n';
