@@ -20,19 +20,15 @@ int32_t main()
     for (int i = 0; i < n; i++)
     {
         for (int j = i + 1; j < n; j++)
-        {
-            if (a[i] == a[j])
-            {
-                cnt++;
-                continue;
-            }
-            else
-            {
+        {          
 
                 for (int k = j + 1; k < n; k++)
                 {
                     if (2 * a[j] == a[i] + a[k])
+                    {
+                        cout << a[i] << ' ' << a[j] << ' ' << a[k] << '\n';
                         cnt++;
+                    }
                 }
             }
         }
