@@ -1,0 +1,1 @@
+{"name":"Local: B - Append","url":"/home/tamim/Desktop/Atcode_problem /contest/B - Append.cpp","tests":[{"id":1707663397732,"input":"5\n1 20\n1 30\n2 1\n1 40\n2 3\n","output":"30\n20"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/tamim/Desktop/Atcode_problem /contest/B - Append.cpp","group":"local","local":true}
