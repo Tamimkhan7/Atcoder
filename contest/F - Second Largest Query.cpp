@@ -12,6 +12,7 @@ int n, q;
 vector<int> v;
 void solve()
 {
+      
     while (q--)
     {
         int type, a, b;
