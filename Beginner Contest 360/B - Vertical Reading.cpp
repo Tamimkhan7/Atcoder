@@ -15,33 +15,26 @@ int32_t main()
     MTK;
     string s, t;
     cin >> s >> t;
-    int q = 100, x = 2;
-    while (q--)
+    int n = s.size();
+    int m = t.size();
+    for (int w = 1; w < n; w++)
     {
-        string ans = "";
-        for (int i = 0; i < s.size(); i += x)
+        for (int c = 1; c <= w; c++)
         {
-            ans += s[i];
+            string ans = "";
+            for (int i = 0; i < n; i += w)
+            {
+                if ((i + c - 1) < n)
+                    ans += s[i + c - 1];
+                if (ans.size() > m)
+                    break;
+            }
             if (ans == t)
             {
                 cout << "Yes" << '\n';
                 return 0;
             }
         }
-        // cout << ans << ' ';
-        ans = "";
-        for (int i = 1; i < s.size(); i += x)
-        {
-            ans += s[i];
-            if (ans == t)
-            {
-                cout << "Yes" << '\n';
-                return 0;
-            }
-        }
-        // cout << ans << '\n';
-        x++;
     }
     cout << "No" << '\n';
-    return 0;
 }
