@@ -13,6 +13,23 @@ using namespace std;
 int32_t main()
 {
     MTK;
-
+    int n, d;
+    cin >> n >> d;
+    vector<int> a(n), b(n);
+    for (int i = 0; i < n; i++)
+        cin >> a[i] >> b[i];
+    int x = 1;
+    while (x <= d)
+    {
+        priority_queue<int> ans;
+        for (int i = 0; i < n; i++)
+        {
+            int res = a[i] * (b[i] + x);
+            // cout << res << '\n';
+            ans.push(res);
+        }
+        cout << ans.top() << '\n';
+        x++;
+    }
     return 0;
 }
